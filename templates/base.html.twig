@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>"> {% block stylesheets %}{% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% include 'organisms/header/main-header.html.twig' with {
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body>
+		{% include 'organisms/header/main-header.html.twig' with {
             'logo': 'Guizmo',
             'navigation': [
-                {'text': 'Accueil', 'href': '/', 'active': true},
+                {'text': 'Accueil', 'href': '/', 'active': false},
                 {'text': 'À propos', 'href': '/about', 'active': false},
                 {'text': 'Contact', 'href': '/contact', 'active': false}
             ]
         } %}
 
-        {% include 'molecules/search/search-bar.html.twig' with {
+		{% include 'molecules/search/search-bar.html.twig' with {
             'placeholder': 'Rechercher',
             'action': '/search'
         } %}
-        
-        <main class="main-content">
-        {% block body %}{% endblock %}
-        {% include 'organisms/footer/main-footer.html.twig' with {
+
+		<main class="main-content"> {% block body %}{% endblock %}
+			{% include 'organisms/footer/main-footer.html.twig' with {
             'copyright': '© 2024 Guizmo. Tous droits réservés.',
             'links': [
                 {'text': 'Mentions légales', 'href': '/legal'},
@@ -37,5 +39,8 @@
             ]
         } %}
     </main>
+    
+    <!-- Bannière de cookies -->
+    {% include 'molecules/cookies/cookie-banner.html.twig' %}
     </body>
 </html>

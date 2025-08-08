@@ -1,0 +1,108 @@
+{#
+    Composant Molecule : Bannière de cookies
+    
+    Paramètres disponibles :
+    - title (string, optionnel) : Titre de la bannière - défaut: "Gestion des cookies"
+    - message (string, optionnel) : Message principal
+    - accept_text (string, optionnel) : Texte du bouton accepter
+    - reject_text (string, optionnel) : Texte du bouton refuser
+    - settings_text (string, optionnel) : Texte du bouton paramètres
+    - class (string, optionnel) : Classes CSS supplémentaires
+#}
+
+<div id="cookie-banner" class="cookie-banner {{ class|default('') }}" style="display: none;">
+	<div class="cookie-content">
+		<div class="cookie-header">
+			<h3 class="cookie-title">{{ title|default('🍪 Gestion des cookies') }}</h3>
+			<button type="button" class="cookie-close" id="cookie-close" aria-label="Fermer">
+				<span>&times;</span>
+			</button>
+		</div>
+
+		<div class="cookie-message">
+			<p>{{ message|default('Nous utilisons des cookies pour améliorer votre expérience sur notre site, analyser le trafic et personnaliser le contenu. En continuant à naviguer, vous acceptez l\'utilisation de ces cookies.') }}</p>
+        </div>
+        
+        <div class="cookie-actions">
+            <button type="button" class="btn btn-primary cookie-accept" id="cookie-accept">
+                {{ accept_text|default('Accepter tous les cookies') }}
+            </button>
+            
+            <button type="button" class="btn btn-secondary cookie-reject" id="cookie-reject">
+                {{ reject_text|default('Refuser') }}
+            </button>
+            
+            <button type="button" class="btn btn-outline cookie-settings" id="cookie-settings">
+                {{ settings_text|default('Paramètres') }}
+            </button>
+        </div>
+        
+        <div class="cookie-links">
+            <a href="{{ path('app_privacy') }}" class="cookie-link">Politique de confidentialité</a>
+            <a href="{{ path('app_legal') }}" class="cookie-link">Mentions légales</a>
+        </div>
+    </div>
+</div>
+
+<!-- Modal des paramètres de cookies -->
+<div id="cookie-settings-modal" class="cookie-modal" style="display: none;">
+    <div class="cookie-modal-content">
+        <div class="cookie-modal-header">
+            <h3>Paramètres des cookies</h3>
+            <button type="button" class="cookie-modal-close" id="cookie-modal-close" aria-label="Fermer">
+                <span>&times;</span>
+            </button>
+        </div>
+        
+        <div class="cookie-modal-body">
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <label class="cookie-category-label">
+                        <input type="checkbox" id="cookie-essential" checked disabled>
+                        <span class="cookie-category-title">Cookies essentiels</span>
+                    </label>
+                    <span class="cookie-category-status">Toujours actifs</span>
+                </div>
+                <p class="cookie-category-description">
+                    Ces cookies sont nécessaires au fonctionnement du site. Ils ne peuvent pas être désactivés.
+                </p>
+            </div>
+            
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <label class="cookie-category-label">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="cookie-category-title">Cookies d'analyse</span>
+                    </label>
+                    <span class="cookie-category-status">Optionnel</span>
+                </div>
+                <p class="cookie-category-description">
+                    Ces cookies nous aident à comprendre comment les visiteurs interagissent avec le site en collectant des informations anonymes.
+                </p>
+            </div>
+            
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <label class="cookie-category-label">
+                        <input type="checkbox" id="cookie-marketing">
+                        <span class="cookie-category-title">Cookies marketing</span>
+                    </label>
+                    <span class="cookie-category-status">Optionnel</span>
+                </div>
+                <p class="cookie-category-description">
+                    Ces cookies sont utilisés pour suivre les visiteurs sur différents sites web afin d'afficher des publicités pertinentes.
+                </p>
+            </div>
+        </div>
+        
+        <div class="cookie-modal-footer">
+            <button type="button" class="btn btn-secondary" id="cookie-save-preferences">
+                Enregistrer mes préférences
+            </button>
+            <button type="button" class="btn btn-primary" id="cookie-accept-all">
+                Accepter tous les cookies
+            </button>
+        </div>
+    </div>
+</div>
+ </p>

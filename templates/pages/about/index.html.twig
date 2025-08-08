@@ -1,11 +1,189 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Guizmo - À propos {% endblock %}
+{% block title %}À propos - Guizmo
+{% endblock %}
 
 {% block body %}
-<!-- Section Article List -->
-	<div class="article-list">
-		<h2>À propos de Guizmo</h2>
-		<p>Guizmo est une entreprise de développement de logiciels spécialisée dans la création d'applications web modernes et performantes. Notre équipe d'experts combine créativité et expertise technique pour offrir des solutions sur mesure.</p>
+	<div
+		class="container">
+		<!-- Section Hero -->
+		<section class="hero-section">
+			<h1>À propos de Guizmo</h1>
+			<p>Découvrez notre histoire, notre mission et notre équipe passionnée par l'innovation technologique.</p>
+		</section>
+
+		<!-- Section Notre Histoire -->
+		<div class="about-section">
+			<div class="about-content">
+				<div class="about-text">
+					<h2>Notre Histoire</h2>
+					<p>Fondée en 2020, Guizmo est née de la passion pour la technologie et de la volonté de créer des solutions numériques qui transforment les entreprises. Notre équipe d'experts combine créativité et expertise technique pour offrir des solutions sur mesure qui répondent aux défis du monde moderne.</p>
+
+					<p>Depuis nos débuts, nous avons accompagné plus de 50 entreprises dans leur transformation numérique, en développant des applications web et mobiles innovantes qui améliorent leur productivité et leur compétitivité.</p>
+				</div>
+
+				<div class="about-image">
+					<div class="image-placeholder">
+						<span>🏢</span>
+						<p>Notre siège social</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Section Notre Mission -->
+		<div class="about-section">
+			<div class="about-content reverse">
+				<div class="about-text">
+					<h2>Notre Mission</h2>
+					<p>Chez Guizmo, notre mission est de démocratiser l'accès aux technologies de pointe en proposant des solutions innovantes, accessibles et performantes. Nous croyons que la technologie doit être un levier de croissance et d'épanouissement pour toutes les entreprises.</p>
+
+					<p>Nous nous engageons à :</p>
+					<ul>
+						<li>Développer des solutions sur mesure adaptées aux besoins spécifiques</li>
+						<li>Utiliser les technologies les plus récentes et performantes</li>
+						<li>Garantir la qualité et la sécurité de nos développements</li>
+						<li>Accompagner nos clients dans leur transformation numérique</li>
+						<li>Contribuer à un avenir technologique responsable et durable</li>
+					</ul>
+				</div>
+
+				<div class="about-image">
+					<div class="image-placeholder">
+						<span>🎯</span>
+						<p>Notre mission</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Section Nos Valeurs -->
+		<div class="about-section">
+			<h2>Nos Valeurs</h2>
+			<div class="values-grid">
+				<div class="value-card">
+					<div class="value-icon">💡</div>
+					<h3>Innovation</h3>
+					<p>Nous repoussons constamment les limites technologiques pour créer des solutions innovantes qui anticipent les besoins futurs.</p>
+				</div>
+
+				<div class="value-card">
+					<div class="value-icon">🤝</div>
+					<h3>Collaboration</h3>
+					<p>Nous travaillons en étroite collaboration avec nos clients pour comprendre leurs besoins et créer des solutions parfaitement adaptées.</p>
+				</div>
+
+				<div class="value-card">
+					<div class="value-icon">⚡</div>
+					<h3>Performance</h3>
+					<p>Nous optimisons chaque ligne de code pour garantir des applications rapides, fiables et évolutives.</p>
+				</div>
+
+				<div class="value-card">
+					<div class="value-icon">🔒</div>
+					<h3>Sécurité</h3>
+					<p>La sécurité de nos applications et la protection des données de nos clients sont nos priorités absolues.</p>
+				</div>
+
+				<div class="value-card">
+					<div class="value-icon">🌱</div>
+					<h3>Durabilité</h3>
+					<p>Nous développons des solutions éco-responsables et durables pour contribuer à un avenir meilleur.</p>
+				</div>
+
+				<div class="value-card">
+					<div class="value-icon">🎓</div>
+					<h3>Excellence</h3>
+					<p>Nous visons l'excellence dans chaque projet, en nous appuyant sur les meilleures pratiques du développement.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Section Notre Équipe -->
+		<div class="about-section">
+			<h2>Notre Équipe</h2>
+			<p class="team-intro">Une équipe passionnée et expérimentée qui partage votre vision du succès.</p>
+
+			<div class="team-grid">
+				<div class="team-member">
+					<div class="member-avatar">
+						<span>👨‍💻</span>
+					</div>
+					<h3>Jean Dupont</h3>
+					<p class="member-role">Directeur Technique</p>
+					<p class="member-description">Expert en architecture logicielle avec 10 ans d'expérience dans le développement d'applications complexes.</p>
+				</div>
+
+				<div class="team-member">
+					<div class="member-avatar">
+						<span>👩‍💼</span>
+					</div>
+					<h3>Marie Martin</h3>
+					<p class="member-role">Chef de Projet</p>
+					<p class="member-description">Spécialiste en gestion de projet agile et en accompagnement client. Elle assure le succès de chaque mission.</p>
+				</div>
+
+				<div class="team-member">
+					<div class="member-avatar">
+						<span>👨‍🎨</span>
+					</div>
+					<h3>Pierre Durand</h3>
+					<p class="member-role">Designer UX/UI</p>
+					<p class="member-description">Créatif passionné par l'expérience utilisateur. Il conçoit des interfaces intuitives et esthétiques.</p>
+				</div>
+
+				<div class="team-member">
+					<div class="member-avatar">
+						<span>👩‍🔬</span>
+					</div>
+					<h3>Sophie Bernard</h3>
+					<p class="member-role">Développeuse Full-Stack</p>
+					<p class="member-description">Experte en technologies web modernes, elle maîtrise l'ensemble de la stack technique.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Section Statistiques -->
+		<div class="about-section">
+			<h2>Nos Chiffres</h2>
+			<div class="stats-grid">
+				<div class="stat-card">
+					<div class="stat-number">50+</div>
+					<div class="stat-label">Projets Réalisés</div>
+				</div>
+
+				<div class="stat-card">
+					<div class="stat-number">98%</div>
+					<div class="stat-label">Clients Satisfaits</div>
+				</div>
+
+				<div class="stat-card">
+					<div class="stat-number">4</div>
+					<div class="stat-label">Années d'Expérience</div>
+				</div>
+
+				<div class="stat-card">
+					<div class="stat-number">24/7</div>
+					<div class="stat-label">Support Client</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Section CTA -->
+		<div class="about-section">
+			<div class="cta-section">
+				<h2>Prêt à démarrer votre projet ?</h2>
+				<p>Contactez-nous pour discuter de vos besoins et découvrir comment nous pouvons vous aider à atteindre vos objectifs.</p>
+
+				<div class="cta-buttons">
+					<a href="{{ path('app_contact') }}" class="btn btn-primary btn-large">
+						Nous Contacter
+					</a>
+					<a href="{{ path('app_home') }}" class="btn btn-secondary btn-large">
+						Découvrir nos Services
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
 {% endblock %}

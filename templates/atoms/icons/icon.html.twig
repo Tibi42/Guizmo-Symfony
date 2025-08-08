@@ -1,0 +1,12 @@
+{#
+    Composant Atom : Icône
+    
+    Paramètres disponibles :
+    - name (string, obligatoire) : Le nom de l'icône
+    - class (string, optionnel) : Classes CSS supplémentaires
+    - size (string, optionnel) : Taille de l'icône (small, medium, large)
+#}
+
+<i 
+    class="icon icon-{{ name }} {{ class|default('') }} {% if size|default(false) %}icon-{{ size }}{% endif %}"
+></i>

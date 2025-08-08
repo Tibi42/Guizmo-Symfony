@@ -1,0 +1,22 @@
+{#
+    Composant Atom : Input texte
+    
+    Paramètres disponibles :
+    - name (string, obligatoire) : Le nom de l'input
+    - type (string, optionnel) : Type d'input (text, email, password...) - défaut: text
+    - placeholder (string, optionnel) : Texte d'aide
+    - class (string, optionnel) : Classes CSS supplémentaires
+    - required (boolean, optionnel) : Champ obligatoire - défaut: false
+    - disabled (boolean, optionnel) : Champ désactivé - défaut: false
+    - value (string, optionnel) : Valeur par défaut
+#}
+
+<input 
+    type="{{ type|default('text') }}" 
+    name="{{ name }}"
+    class="form-input {{ class|default('') }}"
+    {% if placeholder|default(false) %}placeholder="{{ placeholder }}"{% endif %}
+    {% if value|default(false) %}value="{{ value }}"{% endif %}
+    {% if required|default(false) %}required{% endif %}
+    {% if disabled|default(false) %}disabled{% endif %}
+>

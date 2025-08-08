@@ -1,0 +1,33 @@
+{#
+    Composant Organism : Pied de page
+    
+    Paramètres disponibles :
+    - copyright (string, obligatoire) : Texte de copyright
+    - links (array, optionnel) : Liens du footer [{text: 'Mentions légales', href: '/legal'}]
+    - class (string, optionnel) : Classes CSS supplémentaires
+#}
+
+<footer class="main-footer {{ class|default('') }}">
+    <div class="footer-content">
+        {% if links|default(false) %}
+            <nav class="footer-nav">
+                <ul class="footer-links">
+                    {% for link in links %}
+                        {% include 'molecules/navigation/nav-item.html.twig' with {
+                            'text': link.text,
+                            'href': link.href,
+                            'class': 'footer-link'
+                        } %}
+                    {% endfor %}
+                </ul>
+            </nav>
+        {% endif %}
+        
+        <div class="footer-copyright">
+            {% include 'atoms/typography/paragraph.html.twig' with {
+                'text': copyright,
+                'class': 'copyright'
+            } %}
+        </div>
+    </div>
+</footer>

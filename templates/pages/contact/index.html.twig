@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact - Guizmo {% endblock %}
+
+{% block body %}
+	<div
+		class="container">
+		<!-- Section Hero -->
+		<section class="hero-section">
+			<h1>Contactez-nous</h1>
+			<p>Nous sommes là pour vous accompagner dans vos projets. N'hésitez pas à nous contacter pour toute question ou demande de devis.</p>
+		</section>
+
+		<!-- Formulaire de Contact -->
+		<div class="contact-form-container">
+			<div class="contact-info">
+				<h2>Nos coordonnées</h2>
+				<div class="contact-details">
+					<div class="contact-item">
+						<i class="contact-icon">📍</i>
+						<div>
+							<h3>Adresse</h3>
+							<p>123 Rue de l'Innovation<br>75001 Paris, France</p>
+						</div>
+					</div>
+
+					<div class="contact-item">
+						<i class="contact-icon">📧</i>
+						<div>
+							<h3>Email</h3>
+							<p>contact@guizmo.com</p>
+						</div>
+					</div>
+
+					<div class="contact-item">
+						<i class="contact-icon">📞</i>
+						<div>
+							<h3>Téléphone</h3>
+							<p>+33 1 23 45 67 89</p>
+						</div>
+					</div>
+
+					<div class="contact-item">
+						<i class="contact-icon">⏰</i>
+						<div>
+							<h3>Horaires</h3>
+							<p>Lun-Ven : 9h-18h<br>Sam : 9h-12h</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<form class="contact-form" method="POST" action="#">
+				<h2>Envoyez-nous un message</h2>
+
+				<div class="form-row">
+					{% include 'molecules/forms/form-field.html.twig' with {
+                        'label': 'Prénom',
+                        'name': 'firstname',
+                        'type': 'text',
+                        'placeholder': 'Votre prénom',
+                        'required': true,
+                        'class': 'form-field-half'
+                    } %}
+
+					{% include 'molecules/forms/form-field.html.twig' with {
+                        'label': 'Nom',
+                        'name': 'lastname',
+                        'type': 'text',
+                        'placeholder': 'Votre nom',
+                        'required': true,
+                        'class': 'form-field-half'
+                    } %}
+				</div>
+
+				{% include 'molecules/forms/form-field.html.twig' with {
+                    'label': 'Email',
+                    'name': 'email',
+                    'type': 'email',
+                    'placeholder': 'votre.email@exemple.com',
+                    'required': true
+                } %}
+
+				{% include 'molecules/forms/form-field.html.twig' with {
+                    'label': 'Téléphone',
+                    'name': 'phone',
+                    'type': 'tel',
+                    'placeholder': 'Votre numéro de téléphone',
+                    'required': false
+                } %}
+
+				{% include 'molecules/forms/form-field.html.twig' with {
+                    'label': 'Sujet',
+                    'name': 'subject',
+                    'type': 'text',
+                    'placeholder': 'Objet de votre message',
+                    'required': true
+                } %}
+
+				<div class="form-field">
+					{% include 'atoms/labels/label.html.twig' with {
+                        'text': 'Message',
+                        'for': 'message',
+                        'required': true
+                    } %}
+
+					{% include 'atoms/inputs/textarea.html.twig' with {
+                        'name': 'message',
+                        'placeholder': 'Décrivez votre projet ou votre demande...',
+                        'rows': 6,
+                        'required': true,
+                        'class': 'form-textarea'
+                    } %}
+				</div>
+
+				{% include 'atoms/buttons/button.html.twig' with {
+                    'text': 'Envoyer le message',
+                    'type': 'submit',
+                    'class': 'btn-primary btn-large'
+                } %}
+			</form>
+		</div>
+	</div>
+{% endblock %}

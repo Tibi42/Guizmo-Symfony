@@ -1,0 +1,21 @@
+{#
+    Composant Atom : Textarea
+    
+    Paramètres disponibles :
+    - name (string, obligatoire) : Le nom du textarea
+    - placeholder (string, optionnel) : Texte d'aide
+    - class (string, optionnel) : Classes CSS supplémentaires
+    - rows (number, optionnel) : Nombre de lignes - défaut: 3
+    - required (boolean, optionnel) : Champ obligatoire - défaut: false
+    - disabled (boolean, optionnel) : Champ désactivé - défaut: false
+    - value (string, optionnel) : Contenu par défaut
+#}
+
+<textarea 
+    name="{{ name }}"
+    class="form-textarea {{ class|default('') }}"
+    rows="{{ rows|default(3) }}"
+    {% if placeholder|default(false) %}placeholder="{{ placeholder }}"{% endif %}
+    {% if required|default(false) %}required{% endif %}
+    {% if disabled|default(false) %}disabled{% endif %}
+>{{ value|default('') }}</textarea>

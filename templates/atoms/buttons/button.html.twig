@@ -1,0 +1,17 @@
+{#
+    Composant Atom : Bouton simple
+    
+    Paramètres disponibles :
+    - text (string, obligatoire) : Le texte du bouton
+    - type (string, optionnel) : Le type du bouton (button, submit, reset) - défaut: button
+    - class (string, optionnel) : Classes CSS supplémentaires
+    - disabled (boolean, optionnel) : Bouton désactivé - défaut: false
+#}
+
+<button 
+    type="{{ type|default('button') }}" 
+    class="btn {{ class|default('') }}"
+    {% if disabled|default(false) %}disabled{% endif %}
+>
+    {{ text }}
+</button>

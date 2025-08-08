@@ -1,0 +1,17 @@
+{#
+    Composant Molecule : Élément de navigation
+    
+    Paramètres disponibles :
+    - text (string, obligatoire) : Texte du lien
+    - href (string, obligatoire) : URL de destination
+    - active (boolean, optionnel) : Lien actif - défaut: false
+    - class (string, optionnel) : Classes CSS supplémentaires
+#}
+
+<li class="nav-item {{ class|default('') }}">
+    {% include 'atoms/typography/link.html.twig' with {
+        'text': text,
+        'href': href,
+        'class': 'nav-link' ~ (active|default(false) ? ' active' : '')
+    } %}
+</li>

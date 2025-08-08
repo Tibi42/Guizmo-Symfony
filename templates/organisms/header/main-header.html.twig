@@ -1,0 +1,30 @@
+{#
+    Composant Organism : En-tête principal
+    
+    Paramètres disponibles :
+    - logo (string, obligatoire) : Texte ou URL du logo
+    - navigation (array, obligatoire) : Menu principal [{text: 'Accueil', href: '/', active: true}]
+    - class (string, optionnel) : Classes CSS supplémentaires
+#}
+
+<header class="main-header {{ class|default('') }}">
+    <div class="header-brand">
+        {% include 'atoms/typography/heading.html.twig' with {
+            'text': logo,
+            'level': 1,
+            'class': 'logo'
+        } %}
+    </div>
+    
+    <nav class="header-nav">
+        <ul class="nav-list">
+            {% for item in navigation %}
+                {% include 'molecules/navigation/nav-item.html.twig' with {
+                    'text': item.text,
+                    'href': item.href,
+                    'active': item.active|default(false)
+                } %}
+            {% endfor %}
+        </ul>
+    </nav>
+</header>

@@ -1,0 +1,17 @@
+{#
+    Composant Atom : Label
+    
+    Paramètres disponibles :
+    - text (string, obligatoire) : Le texte du label
+    - for (string, optionnel) : ID de l'élément associé
+    - class (string, optionnel) : Classes CSS supplémentaires
+    - required (boolean, optionnel) : Marque le champ comme obligatoire - défaut: false
+#}
+
+<label 
+    class="form-label {{ class|default('') }}"
+    {% if for|default(false) %}for="{{ for }}"{% endif %}
+>
+    {{ text }}
+    {% if required|default(false) %}<span class="required">*</span>{% endif %}
+</label>

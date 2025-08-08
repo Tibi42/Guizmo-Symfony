@@ -12,6 +12,25 @@
         {% endblock %}
     </head>
     <body>
+        {% include 'organisms/header/main-header.html.twig' with {
+            'logo': 'Guizmo',
+            'navigation': [
+                {'text': 'Accueil', 'href': '/', 'active': true},
+                {'text': 'À propos', 'href': '/about', 'active': false},
+                {'text': 'Contact', 'href': '/contact', 'active': false}
+            ]
+        } %}
+        
+        <main class="main-content">
         {% block body %}{% endblock %}
+        {% include 'organisms/footer/main-footer.html.twig' with {
+            'copyright': '© 2024 Guizmo. Tous droits réservés.',
+            'links': [
+                {'text': 'Mentions ylégales', 'href': '/legal'},
+                {'text': 'Politique de confidentialité', 'href': '/privacy'},
+                {'text': 'Conditions d\'utilisation', 'href': '/terms'}
+            ]
+        } %}
+    </main>
     </body>
 </html>

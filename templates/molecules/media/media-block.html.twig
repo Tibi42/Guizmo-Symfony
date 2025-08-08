@@ -1,0 +1,29 @@
+{#
+    Composant Molecule : Bloc média
+    
+    Paramètres disponibles :
+    - image (string, obligatoire) : URL de l'image
+    - alt (string, obligatoire) : Texte alternatif
+    - title (string, obligatoire) : Titre du média
+    - description (string, obligatoire) : Description du média
+    - class (string, optionnel) : Classes CSS supplémentaires
+#}
+
+<div class="media-block {{ class|default('') }}">
+    <div class="media-image">
+        <img src="{{ image }}" alt="{{ alt }}" class="media-img">
+    </div>
+    
+    <div class="media-content">
+        {% include 'atoms/typography/heading.html.twig' with {
+            'text': title,
+            'level': 4,
+            'class': 'media-title'
+        } %}
+        
+        {% include 'atoms/typography/paragraph.html.twig' with {
+            'text': description,
+            'class': 'media-description'
+        } %}
+    </div>
+</div>

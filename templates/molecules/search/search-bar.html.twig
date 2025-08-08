@@ -1,0 +1,23 @@
+{#
+    Composant Molecule : Barre de recherche
+    
+    Paramètres disponibles :
+    - placeholder (string, optionnel) : Texte d'aide - défaut: "Rechercher..."
+    - name (string, optionnel) : Nom de l'input - défaut: "search"
+    - class (string, optionnel) : Classes CSS supplémentaires
+#}
+
+<div class="search-bar {{ class|default('') }}">
+    {% include 'atoms/inputs/input.html.twig' with {
+        'name': name|default('search'),
+        'type': 'search',
+        'placeholder': placeholder|default('Rechercher...'),
+        'class': 'search-input'
+    } %}
+    
+    {% include 'atoms/buttons/button.html.twig' with {
+        'text': 'Rechercher',
+        'type': 'submit',
+        'class': 'search-button'
+    } %}
+</div>

@@ -1,0 +1,17 @@
+{#
+    Composant Atom : Lien
+    
+    Paramètres disponibles :
+    - text (string, obligatoire) : Le texte du lien
+    - href (string, obligatoire) : L'URL de destination
+    - class (string, optionnel) : Classes CSS supplémentaires
+    - target (string, optionnel) : Cible du lien (_blank, _self...)
+#}
+
+<a 
+    href="{{ href }}" 
+    class="link {{ class|default('') }}"
+    {% if target|default(false) %}target="{{ target }}"{% endif %}
+>
+    {{ text }}
+</a>

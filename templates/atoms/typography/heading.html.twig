@@ -1,0 +1,11 @@
+{#
+    Composant Atom : Titre
+    
+    Paramètres disponibles :
+    - text (string, obligatoire) : Le texte du titre
+    - level (number, optionnel) : Niveau du titre (1-6) - défaut: 1
+    - class (string, optionnel) : Classes CSS supplémentaires
+#}
+
+{% set tag = 'h' ~ level|default(1) %}
+<{{ tag }} class="heading {{ class|default('') }}">{{ text }}</{{ tag }}>

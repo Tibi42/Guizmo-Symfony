@@ -1,0 +1,27 @@
+{#
+    Composant Atom : Select
+    
+    Paramètres disponibles :
+    - name (string, obligatoire) : Le nom du select
+    - options (array, obligatoire) : Liste des options [{value: 'val', text: 'Texte'}]
+    - class (string, optionnel) : Classes CSS supplémentaires
+    - required (boolean, optionnel) : Champ obligatoire - défaut: false
+    - disabled (boolean, optionnel) : Champ désactivé - défaut: false
+    - selected (string, optionnel) : Valeur sélectionnée par défaut
+#}
+
+<select 
+    name="{{ name }}"
+    class="form-select {{ class|default('') }}"
+    {% if required|default(false) %}required{% endif %}
+    {% if disabled|default(false) %}disabled{% endif %}
+>
+    {% for option in options %}
+        <option 
+            value="{{ option.value }}"
+            {% if selected|default(false) == option.value %}selected{% endif %}
+        >
+            {{ option.text }}
+        </option>
+    {% endfor %}
+</select>

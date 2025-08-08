@@ -1,0 +1,25 @@
+{#
+    Composant Organism : Liste d'articles
+    
+    Paramètres disponibles :
+    - articles (array, obligatoire) : Liste des articles [{title: 'Titre', content: 'Contenu'}]
+    - class (string, optionnel) : Classes CSS supplémentaires
+#}
+{% set articles = [
+    {title: 'Service 1', content: 'Description du service 1'},
+    {title: 'Service 2', content: 'Description du service 2'},
+    {title: 'Service 3', content: 'Description du service 3'}
+] %}
+
+
+<section class="article-list {{ class|default('') }}">
+    {% for article in articles %}
+        <article class="article-item">
+            {% include 'molecules/cards/card.html.twig' with {
+                'title': article.title,
+                'content': article.content,
+                'class': 'article-card'
+            } %}
+        </article>
+    {% endfor %}
+</section>

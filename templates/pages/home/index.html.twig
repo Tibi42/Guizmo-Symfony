@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Guizmo - Accueil {% endblock %}
+
+{% block body %}
+<div
+	class="container">
+	<!-- Section Hero -->
+	<section class="hero-section">
+		<h1>Bienvenue chez Guizmo</h1>
+		<p>Découvrez nos solutions innovantes de développement de logiciels et transformez vos idées en réalité numérique.</p>
+	</section>
+
+	
+
+	<!-- Grille de Cartes -->
+	<div class="cards-grid">
+		{% include 'molecules/cards/card.html.twig' with {
+                'title': 'Développement Web',
+                'content': 'Création d\'applications web modernes avec les dernières technologies. Nous utilisons React, Vue.js, Symfony et bien d\'autres pour des solutions performantes.',
+                'class': 'service-card'
+            } %}
+
+		{% include 'molecules/cards/card.html.twig' with {
+                'title': 'Applications Mobiles',
+                'content': 'Développement d\'applications mobiles natives et hybrides pour iOS et Android. Expérience utilisateur optimale et performances exceptionnelles.',
+                'class': 'service-card'
+            } %}
+            
+            {% include 'molecules/cards/card.html.twig' with {
+                'title': 'Consulting IT',
+                'content': 'Accompagnement stratégique et conseils techniques pour optimiser vos processus informatiques et améliorer votre productivité.',
+                'class': 'service-card'
+            } %}
+            
+            {% include 'molecules/cards/card.html.twig' with {
+                'title': 'Maintenance & Support',
+                'content': 'Services de maintenance préventive et corrective, support technique 24/7 et mises à jour régulières pour garantir la stabilité de vos systèmes.',
+                'class': 'service-card'
+            } %}
+            
+            {% include 'molecules/cards/card.html.twig' with {
+                'title': 'Formation',
+                'content': 'Programmes de formation personnalisés pour vos équipes. Maîtrisez les nouvelles technologies et optimisez vos compétences techniques.',
+                'class': 'service-card'
+            } %}
+            
+            {% include 'molecules/cards/card.html.twig' with {
+                'title': 'Innovation',
+                'content': 'Recherche et développement de solutions innovantes. Nous explorons les technologies émergentes pour anticiper les besoins futurs.',
+                'class': 'service-card'
+            } %}
+        </div>
+    </div>
+{% endblock %}

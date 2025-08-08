@@ -1,0 +1,25 @@
+{#
+    Composant Molecule : Carte simple
+    
+    Paramètres disponibles :
+    - title (string, obligatoire) : Titre de la carte
+    - content (string, obligatoire) : Contenu de la carte
+    - class (string, optionnel) : Classes CSS supplémentaires
+#}
+
+<div class="card {{ class|default('') }}">
+    <div class="card-header">
+        {% include 'atoms/typography/heading.html.twig' with {
+            'text': title,
+            'level': 3,
+            'class': 'card-title'
+        } %}
+    </div>
+    
+    <div class="card-body">
+        {% include 'atoms/typography/paragraph.html.twig' with {
+            'text': content,
+            'class': 'card-content'
+        } %}
+    </div>
+</div>

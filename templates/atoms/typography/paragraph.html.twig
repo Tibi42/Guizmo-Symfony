@@ -1,0 +1,9 @@
+{#
+    Composant Atom : Paragraphe
+    
+    Paramètres disponibles :
+    - text (string, obligatoire) : Le texte du paragraphe
+    - class (string, optionnel) : Classes CSS supplémentaires
+#}
+
+<p class="paragraph {{ class|default('') }}">{{ text }}</p>

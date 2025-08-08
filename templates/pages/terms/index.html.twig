@@ -1,7 +1,240 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello TermsController!{% endblock %}
+{% block title %}Conditions d'Utilisation - Guizmo
+{% endblock %}
 
 {% block body %}
+	<div
+		class="container">
+		<!-- Section Hero -->
+		<section class="hero-section">
+			<h1>Conditions d'Utilisation</h1>
+			<p>Dernière mise à jour :
+				{{ "now"|date("d/m/Y") }}</p>
+		</section>
 
+		<!-- Contenu des conditions d'utilisation -->
+		<div class="terms-content">
+			<div class="terms-section">
+				<h2>1. Acceptation des conditions</h2>
+
+				<p>En accédant et en utilisant le site web
+					<strong>guizmo.com</strong>
+					("le Site"), vous acceptez d'être lié par ces conditions d'utilisation ("Conditions"). Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser le Site.</p>
+
+				<p>Ces conditions s'appliquent à tous les visiteurs, utilisateurs et autres personnes qui accèdent ou utilisent le Site. En utilisant le Site, vous acceptez également notre
+					<a href="{{ path('app_privacy') }}">Politique de Confidentialité</a>
+					et nos
+					<a href="{{ path('app_legal') }}">Mentions Légales</a>.</p>
+			</div>
+
+			<div class="terms-section">
+				<h2>2. Description du service</h2>
+
+				<p>Guizmo fournit un site web présentant nos services de développement de logiciels, incluant :</p>
+
+				<ul>
+					<li>Présentation de nos services et compétences</li>
+					<li>Formulaire de contact pour les demandes de devis</li>
+					<li>Informations sur l'entreprise et l'équipe</li>
+					<li>Blog et actualités du secteur</li>
+					<li>Ressources et documentation technique</li>
+				</ul>
+
+				<p>Nous nous réservons le droit de modifier, suspendre ou interrompre tout ou partie du Site à tout moment, avec ou sans préavis.</p>
+			</div>
+
+			<div class="terms-section">
+				<h2>3. Utilisation autorisée</h2>
+
+				<p>Vous êtes autorisé à utiliser le Site uniquement à des fins légales et conformes à ces Conditions. Vous vous engagez à :</p>
+
+				<ul>
+					<li>Utiliser le Site conformément à sa destination</li>
+					<li>Respecter les droits de propriété intellectuelle</li>
+					<li>Ne pas tenter d'accéder de manière non autorisée aux systèmes</li>
+					<li>Ne pas perturber le fonctionnement du Site</li>
+					<li>Fournir des informations exactes lors de l'utilisation des formulaires</li>
+				</ul>
+			</div>
+
+			<div class="terms-section">
+				<h2>4. Utilisation interdite</h2>
+
+				<p>Il est strictement interdit d'utiliser le Site pour :</p>
+
+				<ul>
+					<li>Transmettre du contenu illégal, diffamatoire, offensant ou inapproprié</li>
+					<li>Violer les droits de propriété intellectuelle d'autrui</li>
+					<li>Tenter d'accéder de manière non autorisée aux systèmes informatiques</li>
+					<li>Introduire des virus, chevaux de Troie ou autres logiciels malveillants</li>
+					<li>Collecter des informations personnelles sans consentement</li>
+					<li>Utiliser le Site à des fins commerciales non autorisées</li>
+					<li>Porter atteinte à la sécurité ou à l'intégrité du Site</li>
+					<li>Impersonnifier Guizmo ou ses employés</li>
+				</ul>
+			</div>
+
+			<div class="terms-section">
+				<h2>5. Propriété intellectuelle</h2>
+
+				<p>Le Site et son contenu (textes, images, logos, design, code source, etc.) sont protégés par les droits de propriété intellectuelle et appartiennent à Guizmo ou à ses partenaires.</p>
+
+				<h3>5.1 Droits réservés</h3>
+				<p>Toute reproduction, distribution, modification ou utilisation commerciale du contenu du Site est strictement interdite sans autorisation écrite préalable de Guizmo.</p>
+
+				<h3>5.2 Marques déposées</h3>
+				<p>Le nom "Guizmo", le logo et toutes les marques associées sont des marques déposées de Guizmo. Toute utilisation non autorisée de ces marques est interdite.</p>
+
+				<h3>5.3 Licence limitée</h3>
+				<p>Guizmo vous accorde une licence limitée, non exclusive, non transférable et révocable pour accéder et utiliser le Site conformément à ces Conditions.</p>
+			</div>
+
+			<div class="terms-section">
+				<h2>6. Contenu utilisateur</h2>
+
+				<p>Si vous soumettez du contenu via nos formulaires de contact ou autres moyens :</p>
+
+				<ul>
+					<li>Vous garantissez que le contenu est exact et à jour</li>
+					<li>Vous accordez à Guizmo le droit d'utiliser ce contenu pour répondre à votre demande</li>
+					<li>Vous vous engagez à ne pas soumettre de contenu confidentiel ou sensible</li>
+					<li>Vous restez responsable du contenu que vous soumettez</li>
+				</ul>
+
+				<p>Guizmo se réserve le droit de refuser, modifier ou supprimer tout contenu utilisateur qui ne respecte pas ces Conditions.</p>
+			</div>
+
+			<div class="terms-section">
+				<h2>7. Limitation de responsabilité</h2>
+
+				<p>Dans toute la mesure permise par la loi applicable :</p>
+
+				<ul>
+					<li>Guizmo ne sera pas responsable des dommages indirects, accessoires, spéciaux ou consécutifs</li>
+					<li>La responsabilité totale de Guizmo sera limitée au montant que vous avez payé pour l'utilisation du Site</li>
+					<li>Guizmo ne garantit pas que le Site sera disponible en permanence ou sans erreur</li>
+					<li>Guizmo ne garantit pas l'exactitude, l'exhaustivité ou l'actualité des informations</li>
+				</ul>
+
+				<p>Cette limitation de responsabilité s'applique même si Guizmo a été informé de la possibilité de tels dommages.</p>
+			</div>
+
+			<div class="terms-section">
+				<h2>8. Indemnisation</h2>
+
+				<p>Vous acceptez d'indemniser et de dégager Guizmo de toute responsabilité concernant toute réclamation, dommage, perte ou dépense (y compris les frais juridiques) résultant de :</p>
+
+				<ul>
+					<li>Votre utilisation du Site</li>
+					<li>Votre violation de ces Conditions</li>
+					<li>Votre violation des droits d'autrui</li>
+					<li>Le contenu que vous soumettez</li>
+				</ul>
+			</div>
+
+			<div class="terms-section">
+				<h2>9. Liens vers des sites tiers</h2>
+
+				<p>Le Site peut contenir des liens vers des sites web tiers. Ces liens sont fournis uniquement pour votre commodité.</p>
+
+				<ul>
+					<li>Guizmo n'exerce aucun contrôle sur ces sites tiers</li>
+					<li>Guizmo n'est pas responsable du contenu de ces sites</li>
+					<li>L'inclusion de ces liens ne constitue pas une approbation</li>
+					<li>Vous accédez à ces sites à vos propres risques</li>
+				</ul>
+
+				<p>Nous vous recommandons de lire les conditions d'utilisation et la politique de confidentialité de tout site tiers que vous visitez.</p>
+			</div>
+
+			<div class="terms-section">
+				<h2>10. Sécurité</h2>
+
+				<p>Guizmo met en œuvre des mesures de sécurité appropriées pour protéger le Site et vos informations. Cependant :</p>
+
+				<ul>
+					<li>Aucun système de sécurité n'est infaillible</li>
+					<li>Vous êtes responsable de maintenir la confidentialité de vos informations</li>
+					<li>Vous devez signaler immédiatement toute utilisation non autorisée</li>
+					<li>Guizmo ne peut garantir la sécurité absolue des transmissions</li>
+				</ul>
+			</div>
+
+			<div class="terms-section">
+				<h2>11. Cookies et technologies de suivi</h2>
+
+				<p>Le Site utilise des cookies et d'autres technologies de suivi pour améliorer votre expérience. Pour plus d'informations, consultez notre
+					<a href="{{ path('app_privacy') }}">Politique de Confidentialité</a>.</p>
+
+				<p>En utilisant le Site, vous consentez à l'utilisation de ces technologies conformément à notre politique de confidentialité.</p>
+			</div>
+
+			<div class="terms-section">
+				<h2>12. Modifications des conditions</h2>
+
+				<p>Guizmo se réserve le droit de modifier ces Conditions à tout moment. Les modifications prendront effet immédiatement après leur publication sur le Site.</p>
+
+				<p>Il est de votre responsabilité de consulter régulièrement ces Conditions. Votre utilisation continue du Site après toute modification constitue votre acceptation des nouvelles Conditions.</p>
+
+				<p>En cas de modifications importantes, nous vous en informerons par email ou par un avis visible sur le Site.</p>
+			</div>
+
+			<div class="terms-section">
+				<h2>13. Résiliation</h2>
+
+				<p>Ces Conditions restent en vigueur tant que vous utilisez le Site. Guizmo peut résilier ou suspendre votre accès au Site à tout moment, avec ou sans motif, avec ou sans préavis.</p>
+
+				<p>En cas de résiliation, les dispositions de ces Conditions qui, par leur nature, doivent survivre à la résiliation, resteront en vigueur.</p>
+			</div>
+
+			<div class="terms-section">
+				<h2>14. Droit applicable et juridiction</h2>
+
+				<p>Ces Conditions sont régies et interprétées conformément aux lois françaises. Tout litige relatif à ces Conditions ou à l'utilisation du Site sera soumis à la compétence exclusive des tribunaux de Paris, France.</p>
+
+				<p>Si vous résidez dans l'Union européenne, vous pouvez également avoir le droit de porter plainte auprès de l'autorité de protection des consommateurs de votre pays de résidence.</p>
+			</div>
+
+			<div class="terms-section">
+				<h2>15. Dispositions générales</h2>
+
+				<h3>15.1 Intégralité de l'accord</h3>
+				<p>Ces Conditions constituent l'intégralité de l'accord entre vous et Guizmo concernant l'utilisation du Site.</p>
+
+				<h3>15.2 Divisibilité</h3>
+				<p>Si une disposition de ces Conditions est jugée invalide ou inapplicable, les autres dispositions resteront en vigueur.</p>
+
+				<h3>15.3 Renonciation</h3>
+				<p>Le fait que Guizmo n'exerce pas un droit ou une disposition de ces Conditions ne constitue pas une renonciation à ce droit ou à cette disposition.</p>
+
+				<h3>15.4 Cession</h3>
+				<p>Vous ne pouvez pas céder vos droits et obligations en vertu de ces Conditions. Guizmo peut céder ses droits et obligations à tout moment.</p>
+			</div>
+
+			<div class="terms-section">
+				<h2>16. Contact</h2>
+
+				<p>Si vous avez des questions concernant ces Conditions d'utilisation, contactez-nous :</p>
+
+				<div class="contact-info-terms">
+					<p>
+						<strong>Guizmo</strong><br>
+						123 Rue de l'Innovation<br>
+						75001 Paris, France</p>
+
+					<p>
+						<strong>Email :</strong>
+						<a href="mailto:legal@guizmo.com">legal@guizmo.com</a><br>
+						<strong>Téléphone :</strong>
+						+33 1 23 45 67 89</p>
+
+					<p>
+						<strong>Pour les questions générales :</strong><br>
+						<a href="mailto:contact@guizmo.com">contact@guizmo.com</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

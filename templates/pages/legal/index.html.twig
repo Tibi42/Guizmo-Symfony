@@ -1,9 +1,208 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello LegalController!{% endblock %}
+{% block title %}Mentions Légales - Guizmo
+{% endblock %}
 
 {% block body %}
+	<div
+		class="container">
+		<!-- Section Hero -->
+		<section class="hero-section">
+			<h1>Mentions Légales</h1>
+			<p>Dernière mise à jour :
+				{{ "now"|date("d/m/Y") }}</p>
+		</section>
 
+		<!-- Contenu des mentions légales -->
+		<div class="legal-content">
+			<div class="legal-section">
+				<h2>1. Éditeur du site</h2>
 
+				<div class="company-info">
+					<p>
+						<strong>Raison sociale :</strong>
+						Guizmo</p>
+					<p>
+						<strong>Forme juridique :</strong>
+						Société par actions simplifiée (SAS)</p>
+					<p>
+						<strong>Capital social :</strong>
+						50 000 €</p>
+					<p>
+						<strong>Siège social :</strong>
+						123 Rue de l'Innovation, 75001 Paris, France</p>
+					<p>
+						<strong>SIRET :</strong>
+						123 456 789 00012</p>
+					<p>
+						<strong>Numéro RCS :</strong>
+						Paris B 123 456 789</p>
+					<p>
+						<strong>TVA intracommunautaire :</strong>
+						FR12345678901</p>
+					<p>
+						<strong>Directeur de publication :</strong>
+						Jean Dupont</p>
+					<p>
+						<strong>Responsable de la rédaction :</strong>
+						Marie Martin</p>
+				</div>
+			</div>
 
-{% endblock %}
+			<div class="legal-section">
+				<h2>2. Hébergement</h2>
+
+				<div class="hosting-info">
+					<p>
+						<strong>Hébergeur :</strong>
+						OVH SAS</p>
+					<p>
+						<strong>Adresse :</strong>
+						2 rue Kellermann, 59100 Roubaix, France</p>
+					<p>
+						<strong>Téléphone :</strong>
+						1007</p>
+					<p>
+						<strong>Site web :</strong>
+						<a href="https://www.ovh.com" target="_blank" rel="noopener">www.ovh.com</a>
+					</p>
+				</div>
+			</div>
+
+			<div class="legal-section">
+				<h2>3. Activité</h2>
+
+				<p>Guizmo est une entreprise spécialisée dans le développement de logiciels et la création d'applications web et mobiles. Nos activités principales comprennent :</p>
+
+				<ul>
+					<li>Développement d'applications web sur mesure</li>
+					<li>Création d'applications mobiles (iOS et Android)</li>
+					<li>Consulting en informatique et conseils techniques</li>
+					<li>Formation et accompagnement technique</li>
+					<li>Maintenance et support informatique</li>
+					<li>Services d'hébergement et de déploiement</li>
+				</ul>
+			</div>
+
+			<div class="legal-section">
+				<h2>4. Propriété intellectuelle</h2>
+
+				<p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.</p>
+
+				<p>
+					<strong>Reproduction interdite :</strong>
+					La reproduction de tout ou partie de ce site sur un support électronique quel qu'il soit est formellement interdite sauf autorisation expresse du directeur de la publication.</p>
+
+				<p>
+					<strong>Marques et logos :</strong>
+					Les marques et logos figurant sur ce site sont des marques déposées. Toute reproduction totale ou partielle de ces marques et/ou logos, effectuée à partir des éléments du site sans l'autorisation expresse de l'exploitant du site Internet est prohibée, au sens de l'article L.713-2 du Code de la propriété intellectuelle.</p>
+			</div>
+
+			<div class="legal-section">
+				<h2>5. Responsabilité</h2>
+
+				<p>Les informations contenues sur ce site sont aussi précises que possible et le site est périodiquement remis à jour, mais peut toutefois contenir des inexactitudes, des omissions ou des lacunes.</p>
+
+				<p>Si vous constatez une lacune, erreur ou ce qui parait être un dysfonctionnement, merci de bien vouloir le signaler par email à l'adresse
+					<a href="mailto:contact@guizmo.com">contact@guizmo.com</a>, en décrivant le problème de la manière la plus précise possible.</p>
+
+				<p>Tout contenu téléchargé se fait aux risques et périls de l'utilisateur et sous sa seule responsabilité. En conséquence, Guizmo ne saurait être tenu responsable d'un quelconque dommage subi par l'ordinateur de l'utilisateur ou d'une quelconque perte de données consécutive au téléchargement.</p>
+			</div>
+
+			<div class="legal-section">
+				<h2>6. Liens hypertextes</h2>
+
+				<p>Les liens hypertextes mis en place dans le cadre du présent site web en direction d'autres ressources présentes sur le réseau Internet ne sauraient engager la responsabilité de Guizmo.</p>
+
+				<p>
+					<strong>Liens sortants :</strong>
+					Guizmo n'exerce aucun contrôle sur les sites vers lesquels des liens sont établis et décline toute responsabilité quant à leur contenu.</p>
+
+				<strong>Liens entrants :</strong>
+				Toute personne physique ou morale souhaitant établir un lien vers ce site doit préalablement demander l'autorisation à Guizmo. L'autorisation de mise en place d'un lien est valable pour tout support, à l'exclusion de ceux diffusant des informations à caractère polémique, pornographique, xénophobe ou pouvant, dans une plus large mesure porter atteinte à la sensibilité du plus grand nombre.</p>
+		</div>
+
+		<div class="legal-section">
+			<h2>7. Cookies</h2>
+
+			<p>Ce site utilise des cookies pour améliorer l'expérience utilisateur et analyser le trafic. Pour plus d'informations sur l'utilisation des cookies, veuillez consulter notre
+				<a href="{{ path('app_privacy') }}">Politique de Confidentialité</a>.</p>
+
+			<p>Vous pouvez à tout moment désactiver les cookies dans les paramètres de votre navigateur. Cependant, cela peut affecter le fonctionnement de certaines fonctionnalités du site.</p>
+		</div>
+
+		<div class="legal-section">
+			<h2>8. Droit applicable</h2>
+
+			<p>Tout litige en relation avec l'utilisation du site
+				<strong>guizmo.com</strong>
+				est soumis au droit français. En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Paris.</p>
+
+			<p>Conformément aux dispositions de l'article L.121-20-3 du Code de la consommation, l'utilisateur peut, s'il le souhaite, recourir à un médiateur de la consommation en cas de litige.</p>
+		</div>
+
+		<div class="legal-section">
+			<h2>9. Protection des données personnelles</h2>
+
+			<p>Conformément à la loi Informatique et Libertés du 6 janvier 1978 modifiée et au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.</p>
+
+			<p>Pour exercer ces droits ou pour toute question sur le traitement de vos données personnelles, vous pouvez nous contacter :</p>
+
+			<ul>
+				<li>Par email :
+					<a href="mailto:privacy@guizmo.com">privacy@guizmo.com</a>
+				</li>
+				<li>Par courrier : Guizmo, 123 Rue de l'Innovation, 75001 Paris, France</li>
+				<li>Par téléphone : +33 1 23 45 67 89</li>
+			</ul>
+
+			<p>Pour plus d'informations, consultez notre
+				<a href="{{ path('app_privacy') }}">Politique de Confidentialité</a>.</p>
+		</div>
+
+		<div class="legal-section">
+			<h2>10. Conditions d'utilisation</h2>
+
+			<p>L'utilisation de ce site implique l'acceptation pleine et entière des conditions générales d'utilisation ci-après décrites. Ces conditions d'utilisation sont susceptibles d'être modifiées ou complétées à tout moment.</p>
+
+			<h3>10.1 Utilisation du site</h3>
+			<p>L'utilisateur s'engage à utiliser le site conformément à sa destination et à ne pas porter atteinte à l'intégrité, à la sécurité ou à l'image du site.</p>
+
+			<h3>10.2 Interdictions</h3>
+			<p>Il est interdit d'utiliser ce site pour :</p>
+			<ul>
+				<li>Transmettre des contenus illégaux, diffamatoires ou offensants</li>
+				<li>Tenter d'accéder de manière non autorisée aux systèmes informatiques</li>
+				<li>Porter atteinte à la sécurité ou à l'intégrité du site</li>
+				<li>Utiliser le site à des fins commerciales non autorisées</li>
+			</ul>
+		</div>
+
+		<div class="legal-section">
+			<h2>11. Contact</h2>
+
+			<p>Pour toute question concernant ces mentions légales, vous pouvez nous contacter :</p>
+
+			<div class="contact-info-legal">
+				<p>
+					<strong>Guizmo</strong><br>
+					123 Rue de l'Innovation<br>
+					75001 Paris, France</p>
+
+				<p>
+					<strong>Email :</strong>
+					<a href="mailto:legal@guizmo.com">legal@guizmo.com</a><br>
+					<strong>Téléphone :</strong>
+					+33 1 23 45 67 89<br>
+					<strong>Fax :</strong>
+					+33 1 23 45 67 90</p>
+
+				<p>
+					<strong>Horaires d'ouverture :</strong><br>
+					Lundi - Vendredi : 9h00 - 18h00<br>
+					Samedi : 9h00 - 12h00<br>
+					Dimanche : Fermé</p>
+			</div>
+		</div>
+	</div>
+</div>{% endblock %}

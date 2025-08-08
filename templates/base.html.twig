@@ -20,13 +20,18 @@
                 {'text': 'Contact', 'href': '/contact', 'active': false}
             ]
         } %}
+
+        {% include 'molecules/search/search-bar.html.twig' with {
+            'placeholder': 'Rechercher',
+            'action': '/search'
+        } %}
         
         <main class="main-content">
         {% block body %}{% endblock %}
         {% include 'organisms/footer/main-footer.html.twig' with {
             'copyright': '© 2024 Guizmo. Tous droits réservés.',
             'links': [
-                {'text': 'Mentions ylégales', 'href': '/legal'},
+                {'text': 'Mentions légales', 'href': '/legal'},
                 {'text': 'Politique de confidentialité', 'href': '/privacy'},
                 {'text': 'Conditions d\'utilisation', 'href': '/terms'}
             ]

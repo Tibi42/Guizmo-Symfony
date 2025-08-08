@@ -32,6 +32,15 @@ body {
     min-height: 0;
 }
 
+/* ===== LOGO ===== */
+.site-logo {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+}
+
 /* ===== HEADER ===== */
 .main-header {
     background: rgba(255, 255, 255, 0.95);
@@ -1892,5 +1901,494 @@ p {
 
     .cta-section p {
         font-size: 1rem;
+    }
+}
+
+/* ===== MODE SOMBRE ===== */
+
+/* Variables CSS pour le mode sombre */
+:root {
+    /* Couleurs claires (mode par défaut) */
+    --bg-primary: #ffffff;
+    --bg-secondary: rgba(255, 255, 255, 0.95);
+    --bg-tertiary: rgba(102, 126, 234, 0.1);
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-muted: #999999;
+    --border-color: rgba(102, 126, 234, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --footer-bg: rgba(0, 0, 0, 0.8);
+    --footer-text: #ffffff;
+    --footer-link: #cccccc;
+    --input-bg: rgba(255, 255, 255, 0.9);
+    --input-border: rgba(102, 126, 234, 0.2);
+    --input-focus-bg: #ffffff;
+    --button-bg: linear-gradient(135deg, #667eea, #764ba2);
+    --button-hover-shadow: rgba(102, 126, 234, 0.4);
+    --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --accent-color: #667eea;
+    --accent-secondary: #764ba2;
+}
+
+/* Mode sombre */
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: rgba(30, 30, 30, 0.95);
+    --bg-tertiary: rgba(102, 126, 234, 0.15);
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #888888;
+    --border-color: rgba(102, 126, 234, 0.3);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --card-bg: rgba(30, 30, 30, 0.95);
+    --header-bg: rgba(30, 30, 30, 0.95);
+    --footer-bg: rgba(20, 20, 20, 0.95);
+    --footer-text: #ffffff;
+    --footer-link: #cccccc;
+    --input-bg: rgba(40, 40, 40, 0.9);
+    --input-border: rgba(102, 126, 234, 0.3);
+    --input-focus-bg: #2a2a2a;
+    --button-bg: linear-gradient(135deg, #667eea, #764ba2);
+    --button-hover-shadow: rgba(102, 126, 234, 0.5);
+    --gradient-bg: linear-gradient(135deg, #1a1a1a 0%, #2d1b69 100%);
+    --accent-color: #667eea;
+    --accent-secondary: #764ba2;
+}
+
+/* Transition douce pour le changement de thème */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease,
+        border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== BOUTON MODE SOMBRE ===== */
+.dark-mode-btn {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.dark-mode-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+    border-color: var(--accent-color);
+}
+
+.dark-mode-btn:active {
+    transform: translateY(0);
+}
+
+.dark-mode-btn .dark-mode-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+}
+
+.dark-mode-btn .sun-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.dark-mode-btn .moon-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* État actif (mode sombre) */
+[data-theme="dark"] .dark-mode-btn .sun-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+[data-theme="dark"] .dark-mode-btn .moon-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+/* Tailles du bouton */
+.dark-mode-btn.small {
+    width: 36px;
+    height: 36px;
+}
+
+.dark-mode-btn.small .dark-mode-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.dark-mode-btn.medium {
+    width: 44px;
+    height: 44px;
+}
+
+.dark-mode-btn.medium .dark-mode-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.dark-mode-btn.large {
+    width: 52px;
+    height: 52px;
+}
+
+.dark-mode-btn.large .dark-mode-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* ===== APPLICATION DES VARIABLES CSS ===== */
+
+/* Body et fond principal */
+body {
+    background: var(--gradient-bg);
+    color: var(--text-primary);
+}
+
+/* Header */
+.main-header {
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 20px var(--shadow-color);
+}
+
+.main-header .logo {
+    background: var(--button-bg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.main-header .nav-item {
+    color: var(--text-primary);
+}
+
+.main-header .nav-item:hover,
+.main-header .nav-item.active {
+    background: var(--button-bg);
+    color: white;
+    box-shadow: 0 4px 15px var(--button-hover-shadow);
+}
+
+/* Footer */
+.main-footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+}
+
+.main-footer .footer-link {
+    color: var(--footer-link);
+}
+
+.main-footer .footer-link:hover {
+    color: var(--footer-text);
+}
+
+.main-footer .copyright {
+    color: var(--text-muted);
+}
+
+/* Cartes et conteneurs */
+.card,
+.contact-form,
+.contact-info,
+.article-list,
+.privacy-content,
+.legal-content,
+.terms-content,
+.about-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 32px var(--shadow-color);
+}
+
+.card-title,
+.contact-form h2,
+.contact-info h2,
+.article-list h2,
+.privacy-section h2,
+.legal-section h2,
+.terms-section h2,
+.about-section h2 {
+    color: var(--text-primary);
+}
+
+.card-body,
+.contact-form p,
+.contact-info p,
+.article-list p,
+.privacy-section p,
+.legal-section p,
+.terms-section p,
+.about-section p {
+    color: var(--text-secondary);
+}
+
+/* Inputs */
+.form-input,
+.form-textarea,
+.search-bar .search-input {
+    background: var(--input-bg);
+    border: 2px solid var(--input-border);
+    color: var(--text-primary);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.search-bar .search-input:focus {
+    border-color: var(--accent-color);
+    background: var(--input-focus-bg);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--text-muted);
+}
+
+/* Labels */
+.form-label {
+    color: var(--text-primary);
+}
+
+/* Boutons */
+.btn-primary {
+    background: var(--button-bg);
+    color: white;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 8px 25px var(--button-hover-shadow);
+}
+
+/* Barre de recherche */
+.search-bar .search-input {
+    background: var(--input-bg);
+    border: 2px solid var(--input-border);
+}
+
+.search-bar .search-input:focus {
+    background: var(--input-focus-bg);
+    border-color: var(--accent-color);
+}
+
+/* Bannière de cookies */
+.cookie-banner {
+    background: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -4px 20px var(--shadow-color);
+}
+
+.cookie-title {
+    color: var(--text-primary);
+}
+
+.cookie-message p {
+    color: var(--text-secondary);
+}
+
+.cookie-close {
+    color: var(--text-secondary);
+}
+
+.cookie-close:hover {
+    background: var(--bg-tertiary);
+    color: var(--accent-color);
+}
+
+/* Modal des cookies */
+.cookie-modal-content {
+    background: var(--card-bg);
+    box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.cookie-modal-header h3 {
+    color: var(--text-primary);
+}
+
+.cookie-category {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+.cookie-category-label {
+    color: var(--text-primary);
+}
+
+.cookie-category-description {
+    color: var(--text-secondary);
+}
+
+/* Sections spéciales */
+.contact-item {
+    background: var(--bg-tertiary);
+}
+
+.contact-item:hover {
+    background: rgba(102, 126, 234, 0.2);
+}
+
+.contact-icon {
+    background: var(--button-bg);
+}
+
+.value-card {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+.value-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.team-member {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.team-member:hover {
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.cta-section {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+.cta-section h2 {
+    color: var(--text-primary);
+}
+
+.cta-section p {
+    color: var(--text-secondary);
+}
+
+/* Informations de contact */
+.contact-info-privacy,
+.contact-info-legal,
+.contact-info-terms,
+.company-info,
+.hosting-info {
+    background: var(--bg-tertiary);
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Liens */
+a {
+    color: var(--accent-color);
+}
+
+a:hover {
+    color: var(--accent-secondary);
+}
+
+/* Responsive pour le bouton */
+@media (max-width: 768px) {
+    .dark-mode-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .dark-mode-btn.medium .dark-mode-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dark-mode-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .dark-mode-btn.medium .dark-mode-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* ===== CONTENEUR BOUTON MODE SOMBRE ===== */
+.dark-mode-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    width: 100%;
+}
+
+/* Ajustement du header pour le bouton */
+.main-header {
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-header .header-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.main-header .header-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive pour le header avec bouton */
+@media (max-width: 768px) {
+    .dark-mode-container {
+        margin-top: 0.75rem;
+    }
+
+    .dark-mode-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .dark-mode-btn.medium .dark-mode-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dark-mode-container {
+        margin-top: 0.5rem;
+    }
+
+    .dark-mode-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .dark-mode-btn.medium .dark-mode-icon {
+        width: 16px;
+        height: 16px;
     }
 }

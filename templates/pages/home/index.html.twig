@@ -8,7 +8,10 @@
 	<!-- Section Hero -->
 	<section class="hero-section">
 		<h1>Bienvenue chez Guizmo</h1>
-		<p>Découvrez nos solutions innovantes de développement de logiciels et transformez vos idées en réalité numérique.</p>
+		{% include 'atoms/typography/paragraph.html.twig' with {
+            'text': 'Découvrez nos solutions innovantes de développement de logiciels et transformez vos idées en réalité numérique.'
+        } %}
+        
 	</section>
 
 	<!-- Grille de Cartes -->
